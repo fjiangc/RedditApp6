@@ -80,10 +80,21 @@ namespace RedditApp.RedditAccess
                 Console.WriteLine($"{message}");
         }
 
-        public int AgentNumber { get; set; }
+        public void SetAgentId(int i)
+        {
+            AgentNumber = i;
+        }
 
-        public bool StopFlag { get; set; }
+        public void ShutdownAgent()
+        {
+            StopFlag = true;
+        }
 
+        private int AgentNumber { get; set; }
+
+        private bool StopFlag { get; set; }
+
+        // only for debugging purpose.
         public bool ShowLog { get; set; }
 
     }

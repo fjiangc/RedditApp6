@@ -7,6 +7,10 @@ namespace RedditApp.RedditAccess
     {
         Task<Listing> RetrievePostData();
 
+        void SetAgentId(int id);
+
+        void ShutdownAgent();
+
         Task PersistPostData(IDataRepo repo);
 
         Task Run(IDataRepo repo);

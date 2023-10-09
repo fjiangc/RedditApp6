@@ -5,7 +5,7 @@ namespace RedditApp.RedditAccess
 {
     public class RedditAgent: IRedditAccessAgent
     {
-        private RedditClient.RedditClient client = new RedditClient.RedditClient();
+        private RedditClient.IRedditClient client = new RedditClient.RedditClient();
         private AccessToken token;
 
         public async Task Run(IDataRepo repo)

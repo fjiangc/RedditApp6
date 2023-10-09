@@ -54,7 +54,7 @@ async Task<AccessToken> GetToken()
     Console.WriteLine("Input Password:");
     var password = Console.ReadLine();
 
-    var loginClient = new RedditClient()
+    IRedditClient loginClient = new RedditClient()
     {
         UserName = userName,
         Password = password,

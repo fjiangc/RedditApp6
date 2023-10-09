@@ -6,6 +6,14 @@
 
         public static string Password = "";
 
-        public static string TokenAuth = "Basic UTlIdUNiZasdf23sdffgas23234sdfasdf23sadfasdLVC1jeFE=";
+        public static string TokenAuth = "";
+
+        public static void LoadCredentials()
+        {
+            var lines = File.ReadAllLines(@".\Auth\credential.psd");
+            UserName = lines[0];
+            Password = lines[1];
+            TokenAuth = lines[2];
+        }
     }
 }

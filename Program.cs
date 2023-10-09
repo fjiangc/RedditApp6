@@ -1,7 +1,11 @@
-﻿using RedditApp.Data;
+﻿using RedditApp.Auth;
+using RedditApp.Data;
 using RedditApp.RedditAccess;
 using RedditApp.RedditClient;
 using RedditApp.StatQuery;
+
+
+Secrets.LoadCredentials();
 
 // User Login
 Console.WriteLine("Input User Name:");
@@ -18,7 +22,11 @@ var loginClient = new RedditClient()
 
 var token = await loginClient.GetAccessToken();
 if (token == null)
+{
     Console.WriteLine("Invalid User Name or Password!");
+    Thread.Sleep(3000);
+    return;
+}
 
 // Init Data Repo and Reddit Agents.
 var repo = new InMemDataRepo();
